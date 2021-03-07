@@ -4,27 +4,33 @@ using UnityEngine;
 
 public class movement : MonoBehaviour
 {
-    public float speed = 2f;
     private Rigidbody body;
-    private float horizontal;
-    private float vertical;
+    private float horizontal, vertical;
+
+    public float forAccel, backAccel, speed, maxSpeed, turnSpeed;
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody>();
     }
 
-    private void Update()
+    void Update()
     {
-        vertical = Input.GetAxis("Vertical");
+        
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        horizontal = Input.GetAxis("Horizontal");
-
-        Vector3 movement = new Vector3(horizontal, 0, vertical);
-        body.AddForce(movement * speed);
+        horizontal = Input.GetAxisRaw("Horizontal");
+        vertical = Input.GetAxisRaw("Vertical");
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
+        {
+            body.AddRelativeForce(vertical*(Vector3.forward*speed));
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+            {
+                body.AddTorque(horizontal * (Vector3.up * turnSpeed), ForceMode.VelocityChange);
+            }
+        }
     }
 }
