@@ -7,11 +7,12 @@ public class movement : MonoBehaviour
     private Rigidbody body;
     private float horizontal, vertical;
 
-    public float forAccel, backAccel, speed, maxSpeed, turnSpeed;
+    public float speed, turnSpeed;
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody>();
+        body.maxAngularVelocity = 2;
     }
 
     void Update()
@@ -24,13 +25,13 @@ public class movement : MonoBehaviour
     {
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
+        if (vertical != 0)
         {
-            body.AddRelativeForce(vertical*(Vector3.forward*speed));
-            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
-            {
-                body.AddTorque(horizontal * (Vector3.up * turnSpeed), ForceMode.VelocityChange);
-            }
+            body.AddRelativeForce(vertical * (Vector3.forward*speed));
+        }
+        if (horizontal != 0)
+        {
+            body.AddRelativeTorque(horizontal * (transform.up * turnSpeed));
         }
     }
 }
