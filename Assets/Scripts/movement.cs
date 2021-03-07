@@ -14,11 +14,15 @@ public class movement : MonoBehaviour
         body = GetComponent<Rigidbody>();
     }
 
+    private void Update()
+    {
+        vertical = Input.GetAxis("Vertical");
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
         horizontal = Input.GetAxis("Horizontal");
-        vertical = Input.GetAxis("Vertical");
 
         Vector3 movement = new Vector3(horizontal, 0, vertical);
         body.AddForce(movement * speed);
