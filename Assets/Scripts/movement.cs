@@ -7,12 +7,12 @@ public class movement : MonoBehaviour
     private Rigidbody body;
     private float horizontal, vertical;
 
-    public float speed, turnSpeed;
+    public float speed, turnSpeed, maxSpeed, maxTurnSpeed;
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody>();
-        body.maxAngularVelocity = 2;
+        body.maxAngularVelocity = maxTurnSpeed;
     }
 
     void Update()
@@ -25,7 +25,7 @@ public class movement : MonoBehaviour
     {
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
-        if (vertical != 0)
+        if (vertical != 0 && body.velocity.magnitude < maxSpeed)
         {
             body.AddRelativeForce(vertical * (Vector3.forward*speed));
         }

@@ -39,11 +39,11 @@ public class marblefollow : MonoBehaviour
         {
             resultingForceAmount = attractionStrength * direction;
         }
-        myRigidbody.AddForce(resultingForceAmount);
-        if(objectOfAttraction.GetComponent<Rigidbody>().velocity == Vector3.zero)
+        if (objectOfAttraction.GetComponent<Rigidbody>().velocity == Vector3.zero)
         {
             myRigidbody.velocity = Vector3.zero;
             myRigidbody.angularVelocity = Vector3.zero;
         }
+        myRigidbody.AddForce(resultingForceAmount);
     }
 }
