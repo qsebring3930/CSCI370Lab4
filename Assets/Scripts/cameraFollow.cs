@@ -5,6 +5,7 @@ using UnityEngine;
 public class cameraFollow : MonoBehaviour
 {
     public GameObject player;
+    public float smoothing, rotSmoothing;
     private Vector3 offset;
     private float newXPosition;
     private float newZPosition;
@@ -16,8 +17,10 @@ public class cameraFollow : MonoBehaviour
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void FixedUpdate()
     {
-
+        transform.position = Vector3.Lerp(transform.position,player.transform.position, smoothing);
+        transform.rotation = Quaternion.Slerp(transform.rotation, player.transform.rotation, rotSmoothing);
+        transform.rotation = Quaternion.Euler(new Vector3(0,transform.rotation.eulerAngles.y,0));
     }
 }
