@@ -12,8 +12,7 @@ public class aiMove : MonoBehaviour
     [Header("Steering")]
     public float sight;
     public LayerMask layer;
-    private bool onYourRight;
-    private bool onYourLeft;
+    private bool onYourRight, onYourLeft;
 
     // Start is called before the first frame update
     void Start()

@@ -131,6 +131,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goal: {fileID: 0}
+  sight: 0
+  layer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!54 &1816822826726679382
 Rigidbody:
   m_ObjectHideFlags: 0
