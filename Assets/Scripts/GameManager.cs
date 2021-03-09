@@ -1,21 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
     [Header("UI stuff")]
-    public GameObject startButton, canvas, events;
+    public GameObject startButton;
+    public TextMeshProUGUI positionTrack;
+    public GameObject canvas, events;
 
     [Header("Position stuff")]
     public GameObject[] racers;
     public Transform line;
 
-
     private int playerpos = 0;
-
+    private Coroutine positionCo;
 
     private void Awake()
     {
@@ -39,10 +42,12 @@ public class GameManager : MonoBehaviour
     //in an array according to how close they are to the finish line or checkpoint
     public IEnumerator updateRacerPos(GameObject[] r)
     {
-        Vector3 localPos;
+        float localPos;
+        float temp;
+        GameObject placeholder;
         for(int i = 0; i <= r.Length; i++)
         {
-            localPos = r[i].transform.position - line.position;
+            localPos = Vector3.Distance(r[i].transform.position, line.position);
             for(int j = 0; j <= r.Length; j++)
             {
                 if(racers[j] == null)
@@ -50,6 +55,15 @@ public class GameManager : MonoBehaviour
                     racers[j] = r[i];
                     break;
                 }
+                temp = Vector3.Distance(racers[j].transform.position, line.position);
+                if(temp > localPos)
+                {
+                    placeholder = racers[j];
+                    racers[j] = r[i];
+                    r[i] = placeholder;
+                    continue;
+                }
+                yield return racers;
             }
         }
 
@@ -58,15 +72,22 @@ public class GameManager : MonoBehaviour
 
     //Coroutine or something that routinely checks the list of racers
     //and returns index+1 as the position of the player racer
-    public IEnumerator getRacerPos(string name)
+    IEnumerator getRacerPos(string name)
     {
+        positionTrack.GetComponent<TextMeshProUGUI>().text = "Pos:";
         for(int i = 0; i <= racers.Length; i++)
         {
             if(racers[i].name == name)
             {
-                yield return playerpos = i+1;
+                positionTrack.GetComponent<TextMeshProUGUI>().text = "Pos: " + i+1;
+                yield return new WaitForFixedUpdate();
             }
         }
+    }
+
+    public void updatePosition(string name)
+    {
+        positionCo = StartCoroutine(getRacerPos(name));
     }
 
     // Update is called once per frame
