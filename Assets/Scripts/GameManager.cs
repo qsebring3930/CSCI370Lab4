@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -33,9 +34,10 @@ public class GameManager : MonoBehaviour
         }
     }
     // Start is called before the first frame update
-    void Start()
+    public void startGame()
     {
-        
+        startButton.SetActive(false);
+        SceneManager.LoadScene(1);
     }
 
     //Coroutine here that checks the position of each racer and sorts them
