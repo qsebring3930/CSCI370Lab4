@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
 
     //Coroutine here that checks the position of each racer and sorts them
     //in an array according to how close they are to the finish line or checkpoint
-    public IEnumerator updateRacerPos(GameObject[] r)
+    public void updateRacerPos(GameObject[] r)
     {
         float localPos;
         float temp;
@@ -65,7 +65,6 @@ public class GameManager : MonoBehaviour
                     r[i] = placeholder;
                     continue;
                 }
-                yield return racers;
             }
         }
 
@@ -74,7 +73,7 @@ public class GameManager : MonoBehaviour
 
     //Coroutine or something that routinely checks the list of racers
     //and returns index+1 as the position of the player racer
-    IEnumerator getRacerPos(string name)
+    public void getRacerPos(string name)
     {
         positionTrack.GetComponent<TextMeshProUGUI>().text = "Pos:";
         for(int i = 0; i <= racers.Length; i++)
@@ -82,14 +81,9 @@ public class GameManager : MonoBehaviour
             if(racers[i].name == name)
             {
                 positionTrack.GetComponent<TextMeshProUGUI>().text = "Pos: " + i+1;
-                yield return new WaitForFixedUpdate();
+                break;
             }
         }
-    }
-
-    public void updatePosition(string name)
-    {
-        positionCo = StartCoroutine(getRacerPos(name));
     }
 
     // Update is called once per frame

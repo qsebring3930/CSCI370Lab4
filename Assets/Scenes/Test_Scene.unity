@@ -388,6 +388,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824b6c71798ab342b110406b9d50599, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  racers:
+  - {fileID: 1770812855}
+  - {fileID: 330833062}
+  n: Player
 --- !u!4 &330833066 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3533124416874171719, guid: b96e054b42f9372498a26cf866ae2bcf,
@@ -1188,6 +1192,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70cfed81516e7f24f9411a56234e1d0d, type: 3}
+--- !u!1 &1770812855 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9074046717046024884, guid: 70cfed81516e7f24f9411a56234e1d0d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1770812854}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1810802756
 GameObject:
   m_ObjectHideFlags: 0
