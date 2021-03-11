@@ -10,9 +10,9 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     [Header("UI stuff")]
-    public GameObject startButton, positionBox;
+    public GameObject startButton, creditButton, howTo, back, positionBox;
     public TextMeshProUGUI positionTrack;
-    public GameObject canvas, events;
+    public GameObject canvas, title, events;
 
     [Header("Position stuff")]
     public GameObject[] racers;
@@ -28,6 +28,10 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(positionBox);
             DontDestroyOnLoad(startButton);
             DontDestroyOnLoad(positionTrack);
+            DontDestroyOnLoad(creditButton);
+            DontDestroyOnLoad(howTo);
+            DontDestroyOnLoad(title);
+            DontDestroyOnLoad(back);
         }
         else
         {
@@ -38,12 +42,31 @@ public class GameManager : MonoBehaviour
     public void startGame()
     {
         startButton.SetActive(false);
+        title.SetActive(false);
+        creditButton.SetActive(false);
+        howTo.SetActive(false);
         positionBox.SetActive(true);
         SceneManager.LoadScene(1);
     }
 
-    //Coroutine here that checks the position of each racer and sorts them
-    //in an array according to how close they are to the finish line or checkpoint
+    public void loadCredits()
+    {
+        startButton.SetActive(false);
+        title.SetActive(false);
+        back.SetActive(true);
+        creditButton.SetActive(false);
+        howTo.SetActive(false);
+    }
+
+    public void Back()
+    {
+        startButton.SetActive(true);
+        title.SetActive(true);
+        back.SetActive(false);
+        creditButton.SetActive(true);
+        howTo.SetActive(true);
+    }
+
     public void updateRacerPos(GameObject[] r, Transform line)
     {
         float a = 0.0f;
