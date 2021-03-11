@@ -8,7 +8,7 @@ public class movement : MonoBehaviour
     private float horizontal, vertical;
 
     public float speed, turnSpeed, maxSpeed, maxTurnSpeed, maxBackwardSpeed;
-    private float stunTime = 2, bumperForce = 25;
+    private float stunTime = 2, bumperForce = 15;
     private bool startTimer = false;
 
     // Start is called before the first frame update
