@@ -6,9 +6,6 @@ public class cameraFollow : MonoBehaviour
 {
     public GameObject player;
     public float smoothing, rotSmoothing;
-    private Vector3 offset;
-    private float newXPosition;
-    private float newZPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +13,7 @@ public class cameraFollow : MonoBehaviour
 
     }
 
-    // Update is called once per frame
+    
     void FixedUpdate()
     {
         transform.position = Vector3.Lerp(transform.position,player.transform.position, smoothing);

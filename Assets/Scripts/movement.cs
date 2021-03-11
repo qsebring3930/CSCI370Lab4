@@ -7,7 +7,7 @@ public class movement : MonoBehaviour
     private Rigidbody body;
     private float horizontal, vertical;
 
-    public float speed, turnSpeed, maxSpeed, maxTurnSpeed, maxBackwardSpeed, brakeSpeed;
+    public float speed, turnSpeed, maxSpeed, maxTurnSpeed, maxBackwardSpeed;
     private float stunTime = 2, bumperForce = 25;
     private bool startTimer = false;
 
@@ -40,18 +40,18 @@ public class movement : MonoBehaviour
     {
         if (vertical == 1 && body.velocity.magnitude < maxSpeed)
         {
-            body.AddRelativeForce(vertical * (Vector3.forward * speed));
+            body.AddRelativeForce(Vector3.forward * speed);
             if (horizontal != 0)
             {
-                body.AddRelativeTorque(horizontal * (transform.up * turnSpeed));
+                body.AddRelativeTorque(horizontal * (Vector3.up * turnSpeed));
             }
         }
         if ((vertical == -1 || Input.GetKey(KeyCode.Space)) && body.velocity.magnitude < maxBackwardSpeed)
         {
-            body.AddRelativeForce(vertical * (Vector3.forward * speed));
+            body.AddRelativeForce(Vector3.back * speed);
             if (horizontal != 0)
             {
-                body.AddRelativeTorque(horizontal * (transform.up * turnSpeed));
+                body.AddRelativeTorque(horizontal * (Vector3.up * turnSpeed));
             }
         }
     }
