@@ -161,7 +161,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 159214710}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0.91, z: 1.06}
+  m_LocalPosition: {x: 1, y: 1, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1322112513}
@@ -407,8 +407,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   turnSpeed: 0.75
-  maxSpeed: 15
+  maxSpeed: 12
   maxTurnSpeed: 2
+  maxBackwardSpeed: 5
+  brakeSpeed: 1
 --- !u!135 &330833069
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -823,7 +825,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1196680947}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 1, z: -83.2}
+  m_LocalPosition: {x: 1, y: 1, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1204,7 +1206,7 @@ GameObject:
   - component: {fileID: 1810802757}
   m_Layer: 0
   m_Name: FinishLine
-  m_TagString: Untagged
+  m_TagString: FinishLine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1361,7 +1363,7 @@ PrefabInstance:
     - target: {fileID: 3533124416874171719, guid: b96e054b42f9372498a26cf866ae2bcf,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 19
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3533124416874171719, guid: b96e054b42f9372498a26cf866ae2bcf,
         type: 3}
@@ -1371,7 +1373,7 @@ PrefabInstance:
     - target: {fileID: 3533124416874171719, guid: b96e054b42f9372498a26cf866ae2bcf,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3533124416874171719, guid: b96e054b42f9372498a26cf866ae2bcf,
         type: 3}

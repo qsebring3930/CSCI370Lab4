@@ -7,7 +7,10 @@ public class movement : MonoBehaviour
     private Rigidbody body;
     private float horizontal, vertical;
 
-    public float speed, turnSpeed, maxSpeed, maxTurnSpeed;
+    public float speed, turnSpeed, maxSpeed, maxTurnSpeed, maxBackwardSpeed, brakeSpeed;
+    private float stunTime = 2, bumperForce = 25;
+    private bool startTimer = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,21 +20,81 @@ public class movement : MonoBehaviour
 
     void Update()
     {
-        
+        horizontal = Input.GetAxisRaw("Horizontal");
+        vertical = Input.GetAxisRaw("Vertical");
+        if (startTimer && stunTime > 0)
+        {
+            stunTime -= Time.deltaTime;
+            horizontal = 0;
+        }
+        else if (stunTime < 0)
+        {
+            startTimer = false;
+            stunTime = 2;
+            Debug.Log("not stung");
+        }
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
-        vertical = Input.GetAxisRaw("Vertical");
-        if (vertical != 0 && body.velocity.magnitude < maxSpeed)
+        if (vertical == 1 && body.velocity.magnitude < maxSpeed)
         {
-            body.AddRelativeForce(vertical * (Vector3.forward*speed));
+            body.AddRelativeForce(vertical * (Vector3.forward * speed));
+            if (horizontal != 0)
+            {
+                body.AddRelativeTorque(horizontal * (transform.up * turnSpeed));
+            }
         }
-        if (horizontal != 0)
+        if ((vertical == -1 || Input.GetKey(KeyCode.Space)) && body.velocity.magnitude < maxBackwardSpeed)
         {
-            body.AddRelativeTorque(horizontal * (transform.up * turnSpeed));
+            body.AddRelativeForce(vertical * (Vector3.forward * speed));
+            if (horizontal != 0)
+            {
+                body.AddRelativeTorque(horizontal * (transform.up * turnSpeed));
+            }
+        }
+    }
+
+    private void OnTriggerEnter(Collider col)
+    {
+        switch (col.gameObject.tag)
+        {
+            case "Boost":
+                Debug.Log("boosting");
+                body.AddRelativeForce(Vector3.forward * 300);
+                break;
+            case "Slow":
+                Debug.Log("slowed");
+                maxSpeed = maxSpeed / 2;
+                speed = speed / 2;
+                break;
+            case "Bumper":
+                Debug.Log("bumped");
+                body.velocity = Vector3.zero;
+                Vector3 closestPoint = col.ClosestPointOnBounds(body.transform.position);
+                body.AddExplosionForce(bumperForce, col.transform.position, 5, 0, ForceMode.Impulse);
+                break;
+            case "Jellyfish":
+                Debug.Log("stung");
+                startTimer = true;
+                break;
+            case "FinishLine":
+                Debug.Log("finished");
+                GetComponent<movement>().enabled = false;
+                break;
+        }
+    }
+
+    private void OnTriggerExit(Collider col)
+    {
+        switch (col.gameObject.tag)
+        {
+            case "Slow":
+                Debug.Log("not slowed");
+                maxSpeed = maxSpeed * 2;
+                speed = speed * 2;
+                break;
         }
     }
 }
