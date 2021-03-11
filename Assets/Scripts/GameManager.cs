@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI positionTrack;
     public GameObject canvas, title, events;
     public GameObject howToText, credits;
+    public GameObject backgroundImage;
 
     [Header("Position stuff")]
     public GameObject[] racers;
@@ -35,6 +36,7 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(back);
             DontDestroyOnLoad(howToText);
             DontDestroyOnLoad(credits);
+            DontDestroyOnLoad(backgroundImage);
         }
         else
         {
@@ -49,7 +51,8 @@ public class GameManager : MonoBehaviour
         creditButton.SetActive(false);
         howTo.SetActive(false);
         positionBox.SetActive(true);
-        SceneManager.LoadScene(1);
+        backgroundImage.SetActive(true);
+        StartCoroutine(LoadAnAsyncScene(1));
     }
 
     public void loadCredits(GameObject n)
@@ -109,6 +112,32 @@ public class GameManager : MonoBehaviour
                 break;
             }
         }
+    }
+
+    IEnumerator ColorLerp(Color endValue, float duration)
+    {
+        float time = 0;
+        Image sprite = backgroundImage.GetComponent<Image>();
+        Color startValue = sprite.color;
+
+        while (time < duration)
+        {
+            sprite.color = Color.Lerp(startValue, endValue, time / duration);
+            time += Time.deltaTime;
+            yield return null;
+        }
+    }
+
+    IEnumerator LoadAnAsyncScene(int n)
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(n);
+
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+
+        StartCoroutine(ColorLerp(new Color(0, 0, 0, 0), 2));
     }
 
     // Update is called once per frame
