@@ -16,9 +16,6 @@ public class GameManager : MonoBehaviour
     public GameObject howToText, credits;
     public GameObject backgroundImage;
 
-    [Header("Position stuff")]
-    public GameObject[] racers;
-
     private void Awake()
     {
         if(Instance == null)

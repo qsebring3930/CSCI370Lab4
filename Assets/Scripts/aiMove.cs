@@ -35,10 +35,12 @@ public class aiMove : MonoBehaviour
     {
         if (onYourRight)
         {
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.right) * sight, Color.yellow);
             Debug.Log("On your right!");
         }
         if (onYourLeft)
         {
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.left) * sight, Color.yellow);
             Debug.Log("On your left!");
         }
         rb.velocity = agent.velocity;
