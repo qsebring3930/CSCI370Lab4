@@ -83,9 +83,11 @@ public class GameManager : MonoBehaviour
         positionTrack.GetComponent<TextMeshProUGUI>().text = "Pos:";
         for(int i = 0; i <= racers.Length; i++)
         {
+            Debug.Log(i);
+            Debug.Log(racers.Length);
             if(racers[i].name == name)
             {
-                positionTrack.GetComponent<TextMeshProUGUI>().text = "Pos: " + (i+2);
+                positionTrack.GetComponent<TextMeshProUGUI>().text = "Pos: " + (i+1);
                 break;
             }
         }
