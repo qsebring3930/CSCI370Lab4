@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public GameObject startButton, creditButton, howTo, back, positionBox;
     public TextMeshProUGUI positionTrack;
     public GameObject canvas, title, events;
+    public GameObject howToText, credits;
 
     [Header("Position stuff")]
     public GameObject[] racers;
@@ -32,6 +33,8 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(howTo);
             DontDestroyOnLoad(title);
             DontDestroyOnLoad(back);
+            DontDestroyOnLoad(howToText);
+            DontDestroyOnLoad(credits);
         }
         else
         {
@@ -49,13 +52,14 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    public void loadCredits()
+    public void loadCredits(GameObject n)
     {
         startButton.SetActive(false);
         title.SetActive(false);
         back.SetActive(true);
         creditButton.SetActive(false);
         howTo.SetActive(false);
+        n.SetActive(true);
     }
 
     public void Back()
@@ -65,6 +69,8 @@ public class GameManager : MonoBehaviour
         back.SetActive(false);
         creditButton.SetActive(true);
         howTo.SetActive(true);
+        howToText.SetActive(false);
+        credits.SetActive(false);
     }
 
     public void updateRacerPos(GameObject[] r, Transform line)
