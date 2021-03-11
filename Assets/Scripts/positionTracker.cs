@@ -17,6 +17,6 @@ public class positionTracker : MonoBehaviour
     void Update()
     {
         GameManager.Instance.updateRacerPos(racers, finish);
-        GameManager.Instance.getRacerPos(n);
+        GameManager.Instance.getRacerPos(racers, n);
     }
 }

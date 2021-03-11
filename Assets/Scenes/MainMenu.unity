@@ -382,6 +382,10 @@ MonoBehaviour:
   racers:
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!4 &742746537
 Transform:
   m_ObjectHideFlags: 0
