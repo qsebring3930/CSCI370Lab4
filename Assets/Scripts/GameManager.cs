@@ -10,15 +10,11 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     [Header("UI stuff")]
-    public GameObject startButton, positionBox;
+    public GameObject startButton, creditButton, howTo, back, positionBox;
     public TextMeshProUGUI positionTrack;
-    public GameObject canvas, events;
-
-    [Header("Position stuff")]
-    public GameObject[] racers;
-
-    private int playerpos = 0;
-    private Coroutine positionCo;
+    public GameObject canvas, title, events;
+    public GameObject howToText, credits;
+    public GameObject backgroundImage;
 
     private void Awake()
     {
@@ -31,6 +27,13 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(positionBox);
             DontDestroyOnLoad(startButton);
             DontDestroyOnLoad(positionTrack);
+            DontDestroyOnLoad(creditButton);
+            DontDestroyOnLoad(howTo);
+            DontDestroyOnLoad(title);
+            DontDestroyOnLoad(back);
+            DontDestroyOnLoad(howToText);
+            DontDestroyOnLoad(credits);
+            DontDestroyOnLoad(backgroundImage);
         }
         else
         {
@@ -41,34 +44,51 @@ public class GameManager : MonoBehaviour
     public void startGame()
     {
         startButton.SetActive(false);
+        title.SetActive(false);
+        creditButton.SetActive(false);
+        howTo.SetActive(false);
         positionBox.SetActive(true);
-        SceneManager.LoadScene(1);
+        backgroundImage.SetActive(true);
+        StartCoroutine(LoadAnAsyncScene(1));
     }
 
-    //Coroutine here that checks the position of each racer and sorts them
-    //in an array according to how close they are to the finish line or checkpoint
+    public void loadCredits(GameObject n)
+    {
+        startButton.SetActive(false);
+        title.SetActive(false);
+        back.SetActive(true);
+        creditButton.SetActive(false);
+        howTo.SetActive(false);
+        n.SetActive(true);
+    }
+
+    public void Back()
+    {
+        startButton.SetActive(true);
+        title.SetActive(true);
+        back.SetActive(false);
+        creditButton.SetActive(true);
+        howTo.SetActive(true);
+        howToText.SetActive(false);
+        credits.SetActive(false);
+    }
+
     public void updateRacerPos(GameObject[] r, Transform line)
     {
-        float localPos = 0.0f;
-        float temp = 0.0f;
-        GameObject placeholder;
-        for(int i = 0; i < r.Length; i++)
+        float a = 0.0f;
+        float b = 0.0f;
+        GameObject temp;
+        for(int i = 1; i < r.Length; i++)
         {
-            localPos = Vector3.Distance(r[i].transform.position, line.position);
-            for(int j = 0; j < r.Length; j++)
+            for(int j = i-1; j >= 0; j--)
             {
-                if(racers[j] == null)
+                a = Vector3.Distance(r[j + 1].transform.position, line.position);
+                b = Vector3.Distance(r[j].transform.position, line.position);
+                if (a < b)
                 {
-                    racers[j] = r[i];
-                    break;
-                }
-                temp = Vector3.Distance(racers[j].transform.position, line.position);
-                if(temp > localPos)
-                {
-                    placeholder = racers[j];
-                    racers[j] = r[i];
-                    r[i] = placeholder;
-                    continue;
+                    temp = r[j];
+                    r[j] = r[j + 1];
+                    r[j + 1] = temp;
                 }
             }
         }
@@ -78,17 +98,43 @@ public class GameManager : MonoBehaviour
 
     //Coroutine or something that routinely checks the list of racers
     //and returns index+1 as the position of the player racer
-    public void getRacerPos(string name)
+    public void getRacerPos(GameObject[] r, string name)
     {
         positionTrack.GetComponent<TextMeshProUGUI>().text = "Pos:";
-        for(int i = 0; i <= racers.Length; i++)
+        for(int i = 0; i <= r.Length; i++)
         {
-            if(racers[i].name == name)
+            if(r[i].name == name)
             {
-                positionTrack.GetComponent<TextMeshProUGUI>().text = "Pos: " + (i+2);
+                positionTrack.GetComponent<TextMeshProUGUI>().text = "Pos: " + (i+1);
                 break;
             }
         }
+    }
+
+    IEnumerator ColorLerp(Color endValue, float duration)
+    {
+        float time = 0;
+        Image sprite = backgroundImage.GetComponent<Image>();
+        Color startValue = sprite.color;
+
+        while (time < duration)
+        {
+            sprite.color = Color.Lerp(startValue, endValue, time / duration);
+            time += Time.deltaTime;
+            yield return null;
+        }
+    }
+
+    IEnumerator LoadAnAsyncScene(int n)
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(n);
+
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+
+        StartCoroutine(ColorLerp(new Color(0, 0, 0, 0), 2));
     }
 
     // Update is called once per frame
