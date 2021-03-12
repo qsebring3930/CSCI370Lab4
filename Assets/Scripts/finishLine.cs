@@ -11,32 +11,33 @@ public class finishLine : MonoBehaviour
 
     void Start()
     {
+        GameManager gameManager = FindObjectOfType<GameManager>();
         if (lap == 3)
         {
-            pos = GameManager.getPos();
+            pos = gameManager.getPos();
             if (pos == 1)
             {
-                GameManager.setScore(10);
+                gameManager.setScore(10);
             }
             else if (pos == 2)
             {
-                GameManager.setScore(8);
+                gameManager.setScore(8);
             }
             else if (pos == 3)
             {
-                GameManager.setScore(6);
+                gameManager.setScore(6);
             }
             else if (pos == 4)
             {
-                GameManager.setScore(4);
+                gameManager.setScore(4);
             }
             else if (pos == 5)
             {
-                GameManager.setScore(2);
+                gameManager.setScore(2);
             }
             else
             {
-                GameManager.setScore(0);
+                gameManager.setScore(0);
             }
         }
         lap += 1;

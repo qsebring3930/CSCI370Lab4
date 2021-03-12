@@ -140,7 +140,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(ColorLerp(new Color(0, 0, 0, 0), 2));
     }
 
-    public void getPos()
+    public int getPos()
     {
         return position;
     }
