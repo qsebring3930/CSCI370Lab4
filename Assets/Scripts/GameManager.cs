@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
         creditButton.SetActive(false);
         howTo.SetActive(false);
         positionBox.SetActive(true);
-        backgroundImage.SetActive(true);
+        backgroundImage.SetActive(false);
         StartCoroutine(LoadAnAsyncScene("Level 1"));
     }
 
