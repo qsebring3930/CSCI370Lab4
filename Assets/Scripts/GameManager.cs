@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     public GameObject canvas, title, events;
     public GameObject howToText, credits;
     public GameObject backgroundImage;
+    public int position = 0;
+    public int score = 0;
 
     private void Awake()
     {
@@ -106,6 +108,7 @@ public class GameManager : MonoBehaviour
             if(r[i].name == name)
             {
                 positionTrack.GetComponent<TextMeshProUGUI>().text = "Pos: " + (i+1);
+                position = i + 1;
                 break;
             }
         }
@@ -135,6 +138,16 @@ public class GameManager : MonoBehaviour
         }
 
         StartCoroutine(ColorLerp(new Color(0, 0, 0, 0), 2));
+    }
+
+    public void getPos()
+    {
+        return position;
+    }
+
+    public void setScore(int scoreadd)
+    {
+        score += scoreadd;
     }
 
     // Update is called once per frame
