@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
         howTo.SetActive(false);
         positionBox.SetActive(true);
         backgroundImage.SetActive(true);
-        StartCoroutine(LoadAnAsyncScene(1));
+        StartCoroutine(LoadAnAsyncScene("Level 1"));
     }
 
     public void loadCredits(GameObject n)
@@ -125,9 +125,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    IEnumerator LoadAnAsyncScene(int n)
+    IEnumerator LoadAnAsyncScene(string level)
     {
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(n);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(level);
 
         while (!asyncLoad.isDone)
         {

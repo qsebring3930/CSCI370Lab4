@@ -4844,9 +4844,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  turnSpeed: 0.5
+  turnSpeed: 2
   maxSpeed: 12
-  maxTurnSpeed: 2
+  maxTurnSpeed: 4
   maxBackwardSpeed: 6
 --- !u!114 &1107834477
 MonoBehaviour:
