@@ -6,6 +6,8 @@ using UnityEngine.AI;
 public class aiMove : MonoBehaviour
 {
     [SerializeField]public Transform goal;
+    public Transform[] checkpoints;
+    private int i = 0;
     private NavMeshAgent agent;
     private Rigidbody rb;
 
@@ -28,7 +30,7 @@ public class aiMove : MonoBehaviour
     {
         onYourRight = Physics.Raycast(transform.position, Vector3.right, sight, layer);
         onYourLeft = Physics.Raycast(transform.position, Vector3.left, sight, layer);
-        agent.SetDestination(goal.position);
+        agent.SetDestination(checkpoints[i].position);
     }
 
     private void FixedUpdate()
@@ -45,5 +47,13 @@ public class aiMove : MonoBehaviour
         }
         rb.velocity = agent.velocity;
         agent.nextPosition = rb.position;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "Checkpoint")
+        {
+            i++;
+        }
     }
 }

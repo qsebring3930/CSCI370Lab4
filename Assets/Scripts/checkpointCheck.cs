@@ -22,7 +22,7 @@ public class checkpointCheck : MonoBehaviour
     {
         if(collision.gameObject.tag == "AI")
         {
-            collision.gameObject.goal == n;
+            //collision.gameObject.goal == n;
         }
     }
 }
