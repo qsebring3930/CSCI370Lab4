@@ -73,7 +73,7 @@ public class movement : MonoBehaviour
                 Debug.Log("bumped");
                 body.velocity = Vector3.zero;
                 Vector3 closestPoint = col.ClosestPointOnBounds(body.transform.position);
-                body.AddExplosionForce(bumperForce, col.transform.position, 5, 0, ForceMode.Impulse);
+                body.AddExplosionForce(bumperForce, col.transform.position, 3, 0, ForceMode.Impulse);
                 break;
             case "Jellyfish":
                 Debug.Log("stung");
