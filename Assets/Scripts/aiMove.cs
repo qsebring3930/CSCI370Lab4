@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class aiMove : MonoBehaviour
 {
     public Transform[] checkpoints;
-    private int i;
+    public int i;
     private NavMeshAgent agent;
     private Rigidbody rb;
 
@@ -23,8 +23,7 @@ public class aiMove : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         agent.updatePosition = false;
         agent.updateRotation = false;
-        agent.SetDestination(checkpoints[0].position);
-
+        this.agent.SetDestination(checkpoints[0].position);
     }
 
     // Update is called once per frame
@@ -34,7 +33,7 @@ public class aiMove : MonoBehaviour
         onYourLeft = Physics.Raycast(transform.position, Vector3.left, sight, layer);
         if (i < checkpoints.Length)
         {
-            if (agent.pathStatus == NavMeshPathStatus.PathComplete)
+            if (this.rb.position == checkpoints[i].position)
             {
                 Debug.Log("YOU REACHED IT");
                 i++;
