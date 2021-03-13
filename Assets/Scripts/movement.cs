@@ -83,6 +83,10 @@ public class movement : MonoBehaviour
                 Debug.Log("finished");
                 GetComponent<movement>().enabled = false;
                 break;
+            case "Checkpoint":
+                Debug.Log("checkpoint");
+                GetComponent<positionTracker>().newFinish();
+                break;
         }
     }
 
