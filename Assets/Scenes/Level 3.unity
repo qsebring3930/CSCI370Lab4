@@ -1837,6 +1837,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70cfed81516e7f24f9411a56234e1d0d, type: 3}
+--- !u!1 &117994960 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9074046717046024884, guid: 70cfed81516e7f24f9411a56234e1d0d,
+    type: 3}
+  m_PrefabInstance: {fileID: 117994959}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &123690136
 GameObject:
   m_ObjectHideFlags: 0
@@ -2141,11 +2147,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  turnSpeed: 0.5
+  turnSpeed: 2
   maxSpeed: 12
-  maxTurnSpeed: 2
+  maxTurnSpeed: 4
   maxBackwardSpeed: 6
-  numLaps: 0
+  numLaps: 2
 --- !u!114 &143495594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2159,12 +2165,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   racers:
-  - {fileID: 2062603908}
   - {fileID: 143495591}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2062603908}
+  - {fileID: 1186241417}
+  - {fileID: 117994960}
+  - {fileID: 655079910}
+  - {fileID: 940842663}
   n: Player
   checkpoints:
   - {fileID: 280143349}
@@ -8506,6 +8512,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70cfed81516e7f24f9411a56234e1d0d, type: 3}
+--- !u!1 &655079910 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9074046717046024884, guid: 70cfed81516e7f24f9411a56234e1d0d,
+    type: 3}
+  m_PrefabInstance: {fileID: 655079909}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &668369209
 GameObject:
   m_ObjectHideFlags: 0
@@ -10865,6 +10877,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70cfed81516e7f24f9411a56234e1d0d, type: 3}
+--- !u!1 &940842663 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9074046717046024884, guid: 70cfed81516e7f24f9411a56234e1d0d,
+    type: 3}
+  m_PrefabInstance: {fileID: 940842662}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &954850866
 GameObject:
   m_ObjectHideFlags: 0
@@ -12793,6 +12811,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70cfed81516e7f24f9411a56234e1d0d, type: 3}
+--- !u!1 &1186241417 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9074046717046024884, guid: 70cfed81516e7f24f9411a56234e1d0d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1186241416}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1193083532
 PrefabInstance:
   m_ObjectHideFlags: 0

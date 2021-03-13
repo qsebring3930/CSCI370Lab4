@@ -1137,6 +1137,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70cfed81516e7f24f9411a56234e1d0d, type: 3}
+--- !u!1 &136323067 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9074046717046024884, guid: 70cfed81516e7f24f9411a56234e1d0d,
+    type: 3}
+  m_PrefabInstance: {fileID: 136323066}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &150481723
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5657,6 +5663,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70cfed81516e7f24f9411a56234e1d0d, type: 3}
+--- !u!1 &1015712980 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9074046717046024884, guid: 70cfed81516e7f24f9411a56234e1d0d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1015712979}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1024879147
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5771,6 +5783,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70cfed81516e7f24f9411a56234e1d0d, type: 3}
+--- !u!1 &1024879148 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9074046717046024884, guid: 70cfed81516e7f24f9411a56234e1d0d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1024879147}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1034748045
 GameObject:
   m_ObjectHideFlags: 0
@@ -7319,6 +7337,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70cfed81516e7f24f9411a56234e1d0d, type: 3}
+--- !u!1 &1275954972 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9074046717046024884, guid: 70cfed81516e7f24f9411a56234e1d0d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1275954971}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1320125121
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9427,11 +9451,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  turnSpeed: 0.5
+  turnSpeed: 2
   maxSpeed: 12
-  maxTurnSpeed: 2
+  maxTurnSpeed: 4
   maxBackwardSpeed: 6
-  numLaps: 0
+  numLaps: 2
 --- !u!114 &1630703102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9445,12 +9469,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   racers:
-  - {fileID: 1459227625}
   - {fileID: 1630703099}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1459227625}
+  - {fileID: 1275954972}
+  - {fileID: 1015712980}
+  - {fileID: 136323067}
+  - {fileID: 1024879148}
   n: Player
   checkpoints:
   - {fileID: 676687624}
