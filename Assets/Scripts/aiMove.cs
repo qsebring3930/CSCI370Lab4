@@ -38,12 +38,10 @@ public class aiMove : MonoBehaviour
         if (onYourRight)
         {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.right) * sight, Color.yellow);
-            Debug.Log("On your right!");
         }
         if (onYourLeft)
         {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.left) * sight, Color.yellow);
-            Debug.Log("On your left!");
         }
         rb.velocity = agent.velocity;
         agent.nextPosition = rb.position;
@@ -54,10 +52,13 @@ public class aiMove : MonoBehaviour
         switch (col.gameObject.tag)
         {
             case "Checkpoint":
-                if (i < checkpoints.Length)
+                if (i < checkpoints.Length - 1)
                 {
                     i++;
-                    Debug.Log(i);
+                    this.agent.SetDestination(checkpoints[i].position);
+                } else
+                {
+                    i = 0;
                     this.agent.SetDestination(checkpoints[i].position);
                 }
                 break;

@@ -23,6 +23,12 @@ public class positionTracker : MonoBehaviour
 
     public void newFinish()
     {
-        index++;
+        if (index < 7)
+        {
+            index++;
+        } else
+        {
+            index = 0;
+        }
     }
 }

@@ -140,9 +140,28 @@ public class GameManager : MonoBehaviour
         StartCoroutine(ColorLerp(new Color(0, 0, 0, 0), 2));
     }
 
-    public int getPos()
+    public void newScore()
     {
-        return position;
+        if (position == 1)
+        {
+            setScore(10);
+        } else if (position == 2)
+        {
+            setScore(8);
+        } else if (position == 3)
+        {
+            setScore(6);
+        } else if (position == 4)
+        {
+            setScore(4);
+        } else if (position == 5)
+        {
+            setScore(2);
+        } else
+        {
+            setScore(0);
+        }
+        Debug.Log("current score: " + score);
     }
 
     public void setScore(int scoreadd)

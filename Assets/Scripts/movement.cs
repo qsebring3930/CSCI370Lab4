@@ -32,7 +32,6 @@ public class movement : MonoBehaviour
         {
             startTimer = false;
             stunTime = 2;
-            Debug.Log("not stung");
         }
     }
 
@@ -89,6 +88,7 @@ public class movement : MonoBehaviour
                 {
                     Debug.Log("finished");
                     GetComponent<movement>().enabled = false;
+                    GameManager.Instance.newScore();
                     if (SceneManager.GetActiveScene().name == "Level 1")
                     {
                         StartCoroutine(LoadAnAsyncScene("Level 2"));
