@@ -11,6 +11,7 @@ TagManager:
   - Jellyfish
   - Bumper
   - Checkpoint
+  - ramp
   layers:
   - Default
   - TransparentFX
