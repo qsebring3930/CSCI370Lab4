@@ -10,6 +10,7 @@ TagManager:
   - Slow
   - Jellyfish
   - Bumper
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
