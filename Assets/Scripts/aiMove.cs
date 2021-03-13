@@ -23,7 +23,7 @@ public class aiMove : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         agent.updatePosition = false;
         agent.updateRotation = false;
-        this.agent.SetDestination(checkpoints[0].position);
+        this.agent.SetDestination(checkpoints[i].position);
     }
 
     // Update is called once per frame
@@ -31,16 +31,6 @@ public class aiMove : MonoBehaviour
     {
         onYourRight = Physics.Raycast(transform.position, Vector3.right, sight, layer);
         onYourLeft = Physics.Raycast(transform.position, Vector3.left, sight, layer);
-        if (i < checkpoints.Length)
-        {
-            if (this.rb.position == checkpoints[i].position)
-            {
-                Debug.Log("YOU REACHED IT");
-                i++;
-                Debug.Log(i);
-                this.agent.SetDestination(checkpoints[i].position);
-            }
-        }
     }
 
     private void FixedUpdate()
@@ -58,5 +48,20 @@ public class aiMove : MonoBehaviour
         rb.velocity = agent.velocity;
         agent.nextPosition = rb.position;
     }
-    
+
+    private void OnTriggerEnter(Collider col)
+    {
+        switch (col.gameObject.tag)
+        {
+            case "Checkpoint":
+                if (i < checkpoints.Length)
+                {
+                    i++;
+                    Debug.Log(i);
+                    this.agent.SetDestination(checkpoints[i].position);
+                }
+                break;
+        }
+
+    }
 }
