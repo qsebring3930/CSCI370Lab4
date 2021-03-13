@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class movement : MonoBehaviour
 {
@@ -88,6 +89,14 @@ public class movement : MonoBehaviour
                 {
                     Debug.Log("finished");
                     GetComponent<movement>().enabled = false;
+                    if (SceneManager.GetActiveScene().name == "Level 1")
+                    {
+                        StartCoroutine(LoadAnAsyncScene("Level 2"));
+                    }
+                    else
+                    {
+                        StartCoroutine(LoadAnAsyncScene("Level 3"));
+                    }
                 }
                 break;
             case "ramp":
@@ -141,5 +150,16 @@ public class movement : MonoBehaviour
                 maxTurnSpeed /= 10;
                 break;
         }
+    }
+
+    IEnumerator LoadAnAsyncScene(string level)
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(level);
+
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+
     }
 }
