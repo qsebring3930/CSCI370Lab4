@@ -1,4 +1,0 @@
-Texture BOSTRNB1 Range BOSTRNB6 Tics 2
-Texture BOSTRNC1 Range BOSTRNC6 Tics 2
-Texture BOSTRNO1 Range BOSTRNO6 Tics 2
-Texture BOSTRNG1 Range BOSTRNG6 Tics 2
