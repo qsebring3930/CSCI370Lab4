@@ -436,7 +436,7 @@ PrefabInstance:
     - target: {fileID: 7068850571089628929, guid: 70cfed81516e7f24f9411a56234e1d0d,
         type: 3}
       propertyPath: checkpoints.Array.size
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7068850571089628929, guid: 70cfed81516e7f24f9411a56234e1d0d,
         type: 3}
@@ -462,12 +462,12 @@ PrefabInstance:
         type: 3}
       propertyPath: checkpoints.Array.data[4]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1262179651}
     - target: {fileID: 7068850571089628929, guid: 70cfed81516e7f24f9411a56234e1d0d,
         type: 3}
       propertyPath: checkpoints.Array.data[5]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 414990317}
     - target: {fileID: 7068850571089628929, guid: 70cfed81516e7f24f9411a56234e1d0d,
         type: 3}
       propertyPath: checkpoints.Array.data[6]
@@ -477,12 +477,12 @@ PrefabInstance:
         type: 3}
       propertyPath: checkpoints.Array.data[7]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1262179651}
     - target: {fileID: 7068850571089628929, guid: 70cfed81516e7f24f9411a56234e1d0d,
         type: 3}
       propertyPath: checkpoints.Array.data[8]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 414990317}
     - target: {fileID: 7068850571089628929, guid: 70cfed81516e7f24f9411a56234e1d0d,
         type: 3}
       propertyPath: checkpoints.Array.data[9]
@@ -591,7 +591,7 @@ PrefabInstance:
     - target: {fileID: 7068850571089628929, guid: 70cfed81516e7f24f9411a56234e1d0d,
         type: 3}
       propertyPath: checkpoints.Array.size
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7068850571089628929, guid: 70cfed81516e7f24f9411a56234e1d0d,
         type: 3}
@@ -617,12 +617,12 @@ PrefabInstance:
         type: 3}
       propertyPath: checkpoints.Array.data[4]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1262179651}
     - target: {fileID: 7068850571089628929, guid: 70cfed81516e7f24f9411a56234e1d0d,
         type: 3}
       propertyPath: checkpoints.Array.data[5]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 414990317}
     - target: {fileID: 7068850571089628929, guid: 70cfed81516e7f24f9411a56234e1d0d,
         type: 3}
       propertyPath: checkpoints.Array.data[6]
@@ -632,12 +632,12 @@ PrefabInstance:
         type: 3}
       propertyPath: checkpoints.Array.data[7]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1262179651}
     - target: {fileID: 7068850571089628929, guid: 70cfed81516e7f24f9411a56234e1d0d,
         type: 3}
       propertyPath: checkpoints.Array.data[8]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 414990317}
     - target: {fileID: 7068850571089628929, guid: 70cfed81516e7f24f9411a56234e1d0d,
         type: 3}
       propertyPath: checkpoints.Array.data[9]
@@ -791,7 +791,7 @@ PrefabInstance:
     - target: {fileID: 7068850571089628929, guid: 70cfed81516e7f24f9411a56234e1d0d,
         type: 3}
       propertyPath: checkpoints.Array.size
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7068850571089628929, guid: 70cfed81516e7f24f9411a56234e1d0d,
         type: 3}
@@ -817,12 +817,12 @@ PrefabInstance:
         type: 3}
       propertyPath: checkpoints.Array.data[4]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1262179651}
     - target: {fileID: 7068850571089628929, guid: 70cfed81516e7f24f9411a56234e1d0d,
         type: 3}
       propertyPath: checkpoints.Array.data[5]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 414990317}
     - target: {fileID: 7068850571089628929, guid: 70cfed81516e7f24f9411a56234e1d0d,
         type: 3}
       propertyPath: checkpoints.Array.data[6]
@@ -832,12 +832,12 @@ PrefabInstance:
         type: 3}
       propertyPath: checkpoints.Array.data[7]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1262179651}
     - target: {fileID: 7068850571089628929, guid: 70cfed81516e7f24f9411a56234e1d0d,
         type: 3}
       propertyPath: checkpoints.Array.data[8]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 414990317}
     - target: {fileID: 7068850571089628929, guid: 70cfed81516e7f24f9411a56234e1d0d,
         type: 3}
       propertyPath: checkpoints.Array.data[9]
@@ -2984,7 +2984,7 @@ PrefabInstance:
     - target: {fileID: 7068850571089628929, guid: 70cfed81516e7f24f9411a56234e1d0d,
         type: 3}
       propertyPath: checkpoints.Array.size
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7068850571089628929, guid: 70cfed81516e7f24f9411a56234e1d0d,
         type: 3}
@@ -3010,12 +3010,12 @@ PrefabInstance:
         type: 3}
       propertyPath: checkpoints.Array.data[4]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1262179651}
     - target: {fileID: 7068850571089628929, guid: 70cfed81516e7f24f9411a56234e1d0d,
         type: 3}
       propertyPath: checkpoints.Array.data[5]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 414990317}
     - target: {fileID: 7068850571089628929, guid: 70cfed81516e7f24f9411a56234e1d0d,
         type: 3}
       propertyPath: checkpoints.Array.data[6]
@@ -3025,12 +3025,12 @@ PrefabInstance:
         type: 3}
       propertyPath: checkpoints.Array.data[7]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1262179651}
     - target: {fileID: 7068850571089628929, guid: 70cfed81516e7f24f9411a56234e1d0d,
         type: 3}
       propertyPath: checkpoints.Array.data[8]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 414990317}
     - target: {fileID: 7068850571089628929, guid: 70cfed81516e7f24f9411a56234e1d0d,
         type: 3}
       propertyPath: checkpoints.Array.data[9]
@@ -3256,7 +3256,7 @@ PrefabInstance:
     - target: {fileID: 7068850571089628929, guid: 70cfed81516e7f24f9411a56234e1d0d,
         type: 3}
       propertyPath: checkpoints.Array.size
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7068850571089628929, guid: 70cfed81516e7f24f9411a56234e1d0d,
         type: 3}
@@ -3282,12 +3282,12 @@ PrefabInstance:
         type: 3}
       propertyPath: checkpoints.Array.data[4]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1262179651}
     - target: {fileID: 7068850571089628929, guid: 70cfed81516e7f24f9411a56234e1d0d,
         type: 3}
       propertyPath: checkpoints.Array.data[5]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 414990317}
     - target: {fileID: 7068850571089628929, guid: 70cfed81516e7f24f9411a56234e1d0d,
         type: 3}
       propertyPath: checkpoints.Array.data[6]
@@ -3297,12 +3297,12 @@ PrefabInstance:
         type: 3}
       propertyPath: checkpoints.Array.data[7]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1262179651}
     - target: {fileID: 7068850571089628929, guid: 70cfed81516e7f24f9411a56234e1d0d,
         type: 3}
       propertyPath: checkpoints.Array.data[8]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 414990317}
     - target: {fileID: 7068850571089628929, guid: 70cfed81516e7f24f9411a56234e1d0d,
         type: 3}
       propertyPath: checkpoints.Array.data[9]
@@ -4479,9 +4479,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  turnSpeed: 2
+  turnSpeed: 1.5
   maxSpeed: 12
-  maxTurnSpeed: 4
+  maxTurnSpeed: 3
   maxBackwardSpeed: 6
   numLaps: 3
 --- !u!114 &1107834477
@@ -4504,11 +4504,7 @@ MonoBehaviour:
   - {fileID: 772664302}
   - {fileID: 55454304}
   n: Player
-  checkpoints:
-  - {fileID: 2105424119}
-  - {fileID: 1262179651}
-  - {fileID: 414990317}
-  index: 0
+  finish: {fileID: 0}
 --- !u!96 &1107834478
 TrailRenderer:
   serializedVersion: 2

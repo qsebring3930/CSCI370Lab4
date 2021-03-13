@@ -7,8 +7,8 @@ public class movement : MonoBehaviour
     private Rigidbody body;
     private float horizontal, vertical;
 
-    public float speed, turnSpeed, maxSpeed, maxTurnSpeed, maxBackwardSpeed;
-    private float stunTime = 2, bumperForce = 15;
+    public float speed, turnSpeed, maxSpeed, maxTurnSpeed, maxBackwardSpeed, numLaps;
+    private float stunTime = 2, bumperForce = 15, lapNumber = 0;
     private bool startTimer = false;
 
     // Start is called before the first frame update
@@ -80,8 +80,20 @@ public class movement : MonoBehaviour
                 startTimer = true;
                 break;
             case "FinishLine":
-                Debug.Log("finished");
-                GetComponent<movement>().enabled = false;
+                if(lapNumber < numLaps)
+                {
+                    lapNumber++;
+                }
+                else
+                {
+                    Debug.Log("finished");
+                    GetComponent<movement>().enabled = false;
+                }
+                break;
+            case "ramp":
+                Debug.Log("ramp");
+                turnSpeed *= 10;
+                maxTurnSpeed *= 10;
                 break;
             case "Checkpoint":
                 Debug.Log("checkpoint");
@@ -98,6 +110,35 @@ public class movement : MonoBehaviour
                 Debug.Log("not slowed");
                 maxSpeed = maxSpeed * 2;
                 speed = speed * 2;
+                break;
+            case "ramp":
+                Debug.Log("leaving ramp");
+                turnSpeed /= 10;
+                maxTurnSpeed /= 10;
+                break;
+        }
+    }
+
+    private void OnCollisionEnter(Collision col)
+    {
+        switch (col.gameObject.tag)
+        {
+            case "ramp":
+                Debug.Log("ramp");
+                turnSpeed *= 10;
+                maxTurnSpeed *= 10;
+                break;
+        }
+    }
+
+    private void OnCollisionExit(Collision col)
+    {
+        switch (col.gameObject.tag)
+        {
+            case "ramp":
+                Debug.Log("leaving ramp");
+                turnSpeed /= 10;
+                maxTurnSpeed /= 10;
                 break;
         }
     }
