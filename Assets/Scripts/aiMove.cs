@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class aiMove : MonoBehaviour
 {
     public Transform[] checkpoints;
+    public GameObject player;
     public int i;
     private NavMeshAgent agent;
     private Rigidbody rb;
@@ -60,6 +61,7 @@ public class aiMove : MonoBehaviour
                 {
                     i = 0;
                     this.agent.SetDestination(checkpoints[i].position);
+                    player.GetComponent<positionTracker>().aiLap();
                 }
                 break;
         }

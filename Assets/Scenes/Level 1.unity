@@ -430,6 +430,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7068850571089628929, guid: 70cfed81516e7f24f9411a56234e1d0d,
         type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1107834474}
+    - target: {fileID: 7068850571089628929, guid: 70cfed81516e7f24f9411a56234e1d0d,
+        type: 3}
       propertyPath: layer.m_Bits
       value: 512
       objectReference: {fileID: 0}
@@ -4403,6 +4408,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1344064061971645305, guid: b96e054b42f9372498a26cf866ae2bcf,
         type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1344064061971645305, guid: b96e054b42f9372498a26cf866ae2bcf,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
@@ -4549,6 +4559,8 @@ MonoBehaviour:
   - {fileID: 470756625}
   - {fileID: 648604661}
   index: 0
+  lap: 0
+  ailap: 0
 --- !u!96 &1107834478
 TrailRenderer:
   serializedVersion: 2
@@ -5108,6 +5120,11 @@ PrefabInstance:
       propertyPath: sight
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 7068850571089628929, guid: 70cfed81516e7f24f9411a56234e1d0d,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1107834474}
     - target: {fileID: 7068850571089628929, guid: 70cfed81516e7f24f9411a56234e1d0d,
         type: 3}
       propertyPath: layer.m_Bits
@@ -6554,6 +6571,11 @@ PrefabInstance:
       propertyPath: sight
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 7068850571089628929, guid: 70cfed81516e7f24f9411a56234e1d0d,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1107834474}
     - target: {fileID: 7068850571089628929, guid: 70cfed81516e7f24f9411a56234e1d0d,
         type: 3}
       propertyPath: layer.m_Bits
@@ -8890,6 +8912,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7068850571089628929, guid: 70cfed81516e7f24f9411a56234e1d0d,
         type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1107834474}
+    - target: {fileID: 7068850571089628929, guid: 70cfed81516e7f24f9411a56234e1d0d,
+        type: 3}
       propertyPath: layer.m_Bits
       value: 512
       objectReference: {fileID: 0}
@@ -9163,6 +9190,11 @@ PrefabInstance:
       propertyPath: sight
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 7068850571089628929, guid: 70cfed81516e7f24f9411a56234e1d0d,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1107834474}
     - target: {fileID: 7068850571089628929, guid: 70cfed81516e7f24f9411a56234e1d0d,
         type: 3}
       propertyPath: layer.m_Bits

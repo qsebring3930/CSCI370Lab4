@@ -8,6 +8,8 @@ public class positionTracker : MonoBehaviour
     public string n = "Player";
     public Transform[] checkpoints;
     public int index = 0;
+    public int lap = 0;
+    public int ailap = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,8 +19,11 @@ public class positionTracker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GameManager.Instance.updateRacerPos(racers, checkpoints[index]);
-        GameManager.Instance.getRacerPos(racers, n);
+        if (lap == ailap)
+        {
+            GameManager.Instance.updateRacerPos(racers, checkpoints[index]);
+            GameManager.Instance.getRacerPos(racers, n);
+        }
     }
 
     public void newFinish()
@@ -29,6 +34,12 @@ public class positionTracker : MonoBehaviour
         } else
         {
             index = 0;
+            lap++;
         }
+    }
+
+    public void aiLap()
+    {
+        ailap++;
     }
 }
