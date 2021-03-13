@@ -5,9 +5,8 @@ using UnityEngine.AI;
 
 public class aiMove : MonoBehaviour
 {
-    [SerializeField]public Transform goal;
     public Transform[] checkpoints;
-    private int i = 0;
+    private int i;
     private NavMeshAgent agent;
     private Rigidbody rb;
 
@@ -19,10 +18,13 @@ public class aiMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        i = 0;
         agent = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody>();
         agent.updatePosition = false;
         agent.updateRotation = false;
+        agent.SetDestination(checkpoints[0].position);
+
     }
 
     // Update is called once per frame
@@ -30,7 +32,16 @@ public class aiMove : MonoBehaviour
     {
         onYourRight = Physics.Raycast(transform.position, Vector3.right, sight, layer);
         onYourLeft = Physics.Raycast(transform.position, Vector3.left, sight, layer);
-        agent.SetDestination(checkpoints[i].position);
+        if (i < checkpoints.Length)
+        {
+            if (agent.pathStatus == NavMeshPathStatus.PathComplete)
+            {
+                Debug.Log("YOU REACHED IT");
+                i++;
+                Debug.Log(i);
+                this.agent.SetDestination(checkpoints[i].position);
+            }
+        }
     }
 
     private void FixedUpdate()
@@ -48,12 +59,5 @@ public class aiMove : MonoBehaviour
         rb.velocity = agent.velocity;
         agent.nextPosition = rb.position;
     }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.name == "Checkpoint")
-        {
-            i++;
-        }
-    }
+    
 }
